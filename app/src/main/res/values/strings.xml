@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Go Traffic</string>
+
+    <string name="btn_Mapa">Mapa</string>
+    <string name="btn_Conta">Conta</string>
+    <string name="btn_Mapeamento">Mapear</string>
+    <string name="btn_CheckIn">Check-In</string>
+    <string name="btn_Navegacao">Navegar</string>
+
+    <string name="txtEmail">Email</string>
+    <string name="txtSenha">Senha</string>
+    <string name="btn_Entrar">Entrar</string>
+    <string name="btn_Cadastrar">Cadastrar</string>
+</resources>

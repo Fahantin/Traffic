@@ -4,9 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import kmk.gotraffic.view.util.TipAlert;
 import kmk.gotraffic.view.util.Util;
+
 
 public class Principal extends AppCompatActivity {
 

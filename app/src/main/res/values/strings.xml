@@ -11,4 +11,5 @@
     <string name="txtSenha">Senha</string>
     <string name="btn_Entrar">Entrar</string>
     <string name="btn_Cadastrar">Cadastrar</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

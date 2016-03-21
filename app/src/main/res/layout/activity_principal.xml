@@ -13,67 +13,100 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/marginBottom"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <!--<Button-->
+        <!--android:id="@+id/principal_btnMapa"-->
+        <!--style="@style/ButtonGreen"-->
+        <!--android:text="@string/btn_Mapa" />-->
 
         <Button
-            android:id="@+id/principal_btnMapa"
-            style="@style/ButtonGreen"
+            style="@style/ButtonEstilo"
+            android:background="@drawable/buttongreen"
             android:text="@string/btn_Mapa" />
 
         <Button
-            android:id="@+id/principal_btnConta"
-            style="@style/ButtonBlue"
+            style="@style/ButtonEstilo"
+            android:background="@drawable/buttonblue"
             android:text="@string/btn_Conta" />
+        <!--<Button-->
+        <!--android:id="@+id/principal_btnConta"-->
+        <!--style="@style/ButtonBlue"-->
+        <!--android:text="@string/btn_Conta" />-->
 
     </LinearLayout>
 
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="@dimen/marginBottom">-->
 
+    <!--<Button-->
+    <!--android:id="@+id/principal_btnHole"-->
+    <!--style="@style/ButtonGray"-->
+    <!--android:clickable="false"-->
+    <!--android:text="Buraco" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/principal_btnCrash"-->
+    <!--style="@style/ButtonGray"-->
+    <!--android:state_pressed="true"-->
+    <!--android:text="Acidente" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/principal_btnTraffic"-->
+    <!--style="@style/ButtonGray"-->
+    <!--android:state_pressed="true"-->
+    <!--android:text="Congestionamento" />-->
+
+    <!--</LinearLayout>-->
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/marginBottom"
+        android:layout_weight="1">
 
-        <Button
-            android:id="@+id/principal_btnHole"
-            style="@style/ButtonGray"
-            android:clickable="false"
-            android:text="Buraco" />
-
-        <Button
-            android:id="@+id/principal_btnCrash"
-            style="@style/ButtonGray"
-            android:state_pressed="true"
-            android:text="Acidente" />
-
-        <Button
-            android:id="@+id/principal_btnTraffic"
-            style="@style/ButtonGray"
-            android:state_pressed="true"
-            android:text="Congestionamento" />
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="kmk.gotraffic.view.Principal"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/marginBottom"
+        android:layout_weight="3"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/principal_btnMapeamento"
-            style="@style/ButtonGreen"
-            android:state_pressed="true"
+            style="@style/ButtonEstilo"
+            android:background="@drawable/buttongreen"
             android:text="@string/btn_Mapeamento" />
+
 
         <Button
             android:id="@+id/principal_btnCheckIn"
-            style="@style/ButtonBlue"
-            android:state_pressed="true"
+            style="@style/ButtonEstilo"
+            android:background="@drawable/buttonblue"
             android:text="@string/btn_CheckIn" />
 
         <Button
             android:id="@+id/principal_btnNavegacao"
-            style="@style/ButtonGreen"
-            android:state_pressed="true"
+            style="@style/ButtonEstilo"
+            android:background="@drawable/buttongreen"
             android:text="@string/btn_Navegacao" />
 
     </LinearLayout>

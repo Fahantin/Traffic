@@ -11,48 +11,60 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="kmk.gotraffic.view.TelaLogin">
 
-    <TextView
-        style="@style/TxtLoginEstilo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtEmail" />
-
-    <EditText
-        android:id="@+id/edtEmail"
-        style="@style/EdtLoginEstilo"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress" />
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
 
-    <TextView
-        style="@style/TxtLoginEstilo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtSenha" />
+        <TextView
+            style="@style/TxtLoginEstilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtEmail" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            style="@style/EdtLoginEstilo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            style="@style/TxtLoginEstilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtSenha" />
 
 
-    <EditText
-        android:id="@+id/edtSenha"
-        style="@style/EdtLoginEstilo"
+        <EditText
+            android:id="@+id/edtSenha"
+            style="@style/EdtLoginEstilo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberPassword" />
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/login_btnEntrar"
-        style="@style/ButtonBlue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/marginBottomButtons"
-        android:layout_weight="0"
-        android:text="@string/btn_Entrar" />
+        <Button
+            android:id="@+id/login_btnEntrar"
+            style="@style/ButtonEstilo"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_weight="0"
+            android:background="@drawable/buttonblue"
+            android:text="@string/btn_Entrar" />
 
-    <Button
-        android:id="@+id/login_btnCadastrar"
-        style="@style/ButtonGreen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/btn_Cadastrar" />
+        <Button
+            android:id="@+id/login_btnCadastrar"
+            style="@style/ButtonEstilo"
+            android:layout_weight="0"
+            android:background="@drawable/buttongreen"
+            android:text="@string/btn_Cadastrar" />
+    </LinearLayout>
 
 </LinearLayout>

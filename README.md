@@ -10,15 +10,25 @@ Link do repositório no GitHub: https://github.com/Fahantin/Traffic
 
 
 # PROBLEMAS/LIMITAÇÕES CONHECIDAS
+*Obter Latitude e Longitude do Usuário
 
-Inserir a API do GoogleMaps no Projeto.
 
 
 # Nota de Liberação 1.0
 ```
-Entrega 1: Prazo: 21/03
+Entrega 1 - Prazo: 21/03
 ```
 * Criação da Activity Login;
 * Criação do Banco de Dados SQLite;
 * Implementação do arquivo SharedPreferences;
 * Criação da Activity Principal (Tela inicial pós login);
+
+
+# Nota de Liberação 2.0
+```
+Entrega 2 - Prazo: 
+```
+* Criação de Icones Personalizados;
+* Criação de Botões Flutuantes no Mapa;
+* Adicionar Marcação no Mapa via Click Longo;
+* Criação da Activity Conta;

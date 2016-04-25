@@ -1,4 +1,4 @@
-package kmk.gotraffic.view;
+package kmk.gotraffic.controller;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +17,7 @@ public class TelaLogin extends AppCompatActivity {
     private Button btnEntrar;
     private Button btnCadastrar;
 
-    private controller.TelaLogin telaLogin;
+    private kmk.gotraffic.controller.validation.TelaLogin telaLogin;
 
     private SharedPreferences preferences;
 
@@ -27,7 +27,7 @@ public class TelaLogin extends AppCompatActivity {
         setContentView(R.layout.activity_tela_login);
 
         getSupportActionBar().hide();
-        telaLogin = new controller.TelaLogin();
+        telaLogin = new kmk.gotraffic.controller.validation.TelaLogin();
 
         preferences = getSharedPreferences("login", Context.MODE_PRIVATE);
         String email = preferences.getString("email", null);

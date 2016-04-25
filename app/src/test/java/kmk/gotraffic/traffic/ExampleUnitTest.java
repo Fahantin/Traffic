@@ -1,4 +1,4 @@
-package kmk.gotraffic.view;
+package kmk.gotraffic.controller;
 
 import org.junit.Test;
 

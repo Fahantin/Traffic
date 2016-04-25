@@ -1,4 +1,4 @@
-package kmk.gotraffic.view;
+package kmk.gotraffic.controller;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package kmk.gotraffic.view.util;
+package kmk.gotraffic.controller.util;
 
 /**
  * Created by Thiago Fantin on 14/03/2016.

@@ -1,33 +1,28 @@
-package kmk.gotraffic.view.util;
+package kmk.gotraffic.controller.util;
 
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import kmk.gotraffic.view.R;
+import kmk.gotraffic.controller.R;
 
 /**
  * Created by Thiago Fantin on 13/03/2016.
  */
 public class Util {
-
-    public static void showMsgToast(Activity activity, String txt) {
-        LayoutInflater inflater = activity.getLayoutInflater();
-        View lytToast = inflater.inflate(R.layout.toast_template, (ViewGroup) activity.findViewById(R.id.lytToast));
-
-        TextView txtToast = (TextView) lytToast.findViewById(R.id.txtToast);
-        txtToast.setText(txt);
-
-        Toast toast = new Toast(activity);
-        toast.setView(lytToast);
-        toast.show();
-    }
+//
+//    public static void showMsgToast(Activity activity, String txt) {
+//        LayoutInflater inflater = activity.getLayoutInflater();
+////        View lytToast = inflater.inflate(R.layout.toast_template, (ViewGroup) activity.findViewById(R.id.lytToast));
+////
+////        TextView txtToast = (TextView) lytToast.findViewById(R.id.txtToast);
+//        txtToast.setText(txt);
+//
+//        Toast toast = new Toast(activity);
+//        toast.setView(lytToast);
+//        toast.show();
+//    }
 
 
     public static void showAlert(Activity act, String txtMessage, TipAlert tipAlert) {

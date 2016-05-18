@@ -2,7 +2,7 @@ Link do repositório no GitHub: https://github.com/Fahantin/Traffic
 
 # Detalhes da aplicação
 
-* Versão: 1.0
+* Versão: 2.0
 * Controle de versão: GIT (Github)
 * Repositório de Versionamento: https://github.com/Fahantin/Traffic
 * IDE: Android Studio
@@ -10,7 +10,8 @@ Link do repositório no GitHub: https://github.com/Fahantin/Traffic
 
 
 # PROBLEMAS/LIMITAÇÕES CONHECIDAS
-Obter Latitude e Longitude do Usuário.
+Criar classe GeoFence;
+Tratar erro do LocationManager (caso não haja nenhuma localização, o app fecha sozinho).
 
 
 
@@ -26,9 +27,13 @@ Entrega 1 - Prazo: 21/03
 
 # Nota de Liberação 2.0
 ```
-Entrega 2 - Prazo: 
+Entrega 2 - Prazo: 25/04
 ```
 * Criação de Icones Personalizados;
 * Criação de Botões Flutuantes no Mapa;
-* Adicionar Marcação no Mapa via Click Longo;
+* Adicionar Marcação no Mapa;
+* Adicionar funcionalidade MyLocation;
+* Adicionar métodos LocationManager;
+* Inicio da implementação de GeoFence;
+* Inserir classes DAO e MODEL no projeto;
 * Criação da Activity Conta.

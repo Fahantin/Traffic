@@ -5,60 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="kmk.gotraffic.controller.Principal">
+    tools:context=".PrincipalActivity">
 
-    <!--<LinearLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_marginBottom="@dimen/marginBottom"-->
-    <!--android:layout_weight="1"-->
-    <!--android:orientation="horizontal">-->
-
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-    <!--&lt;!&ndash;android:id="@+id/principal_btnMapa"&ndash;&gt;-->
-    <!--&lt;!&ndash;style="@style/ButtonGreen"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:text="@string/btn_Mapa" />&ndash;&gt;-->
-
-    <!--<Button-->
-    <!--style="@style/ButtonEstilo"-->
-    <!--android:background="@drawable/buttongreen"-->
-    <!--android:text="@string/btn_Mapa" />-->
-
-    <!--<Button-->
-    <!--style="@style/ButtonEstilo"-->
-    <!--android:background="@drawable/buttonblue"-->
-    <!--android:text="@string/btn_Conta" />-->
-    <!--&lt;!&ndash;<Button&ndash;&gt;-->
-    <!--&lt;!&ndash;android:id="@+id/principal_btnConta"&ndash;&gt;-->
-    <!--&lt;!&ndash;style="@style/ButtonBlue"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:text="@string/btn_Conta" />&ndash;&gt;-->
-
-    <!--</LinearLayout>-->
-
-    <!--<LinearLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginBottom="@dimen/marginBottom">-->
-
-    <!--<Button-->
-    <!--android:id="@+id/principal_btnHole"-->
-    <!--style="@style/ButtonGray"-->
-    <!--android:clickable="false"-->
-    <!--android:text="Buraco" />-->
-
-    <!--<Button-->
-    <!--android:id="@+id/principal_btnCrash"-->
-    <!--style="@style/ButtonGray"-->
-    <!--android:state_pressed="true"-->
-    <!--android:text="Acidente" />-->
-
-    <!--<Button-->
-    <!--android:id="@+id/principal_btnTraffic"-->
-    <!--style="@style/ButtonGray"-->
-    <!--android:state_pressed="true"-->
-    <!--android:text="Congestionamento" />-->
-
-    <!--</LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -75,72 +23,43 @@
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/map"
+            android:id="@+id/principal_Map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="kmk.gotraffic.controller.Principal" />
+            tools:context=".PrincipalActivity" />
 
     </LinearLayout>
 
-
     <LinearLayout
-        android:id="@+id/floatmenu"
+        android:id="@+id/principal_floatMenu"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_alignBottom="@id/floatmenu"
+        android:layout_alignBottom="@id/principal_floatMenu"
         android:layout_centerHorizontal="true"
         android:gravity="bottom"
         android:orientation="horizontal">
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab1"
+            android:id="@+id/principal_btnAcidente"
             style="@style/ButtonAcidente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_crash" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab2"
+            android:id="@+id/principal_btnCongestionamento"
             style="@style/ButtonCongestionamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_traffic" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab3"
+            android:id="@+id/principal_btnBuraco"
             style="@style/ButtonBuraco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_hole" />
 
     </LinearLayout>
-
-    <!--<LinearLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_weight="1"-->
-    <!--android:orientation="horizontal">-->
-
-    <!--<Button-->
-    <!--android:id="@+id/principal_btnMapeamento"-->
-    <!--style="@style/ButtonEstilo"-->
-    <!--android:background="@drawable/buttongreen"-->
-    <!--android:text="@string/btn_Mapeamento" />-->
-
-
-    <!--<Button-->
-    <!--android:id="@+id/principal_btnCheckIn"-->
-    <!--style="@style/ButtonEstilo"-->
-    <!--android:background="@drawable/buttonblue"-->
-    <!--android:text="@string/btn_CheckIn" />-->
-
-    <!--<Button-->
-    <!--android:id="@+id/principal_btnNavegacao"-->
-    <!--style="@style/ButtonEstilo"-->
-    <!--android:background="@drawable/buttongreen"-->
-    <!--android:text="@string/btn_Navegacao" />-->
-    <!--</LinearLayout>-->
-
-
 </RelativeLayout>

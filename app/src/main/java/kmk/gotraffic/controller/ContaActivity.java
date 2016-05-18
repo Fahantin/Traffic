@@ -3,12 +3,12 @@ package kmk.gotraffic.controller;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class Conta extends AppCompatActivity {
+public class ContaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conta);
-        getSupportActionBar().setTitle("Conta");
+        getSupportActionBar().setTitle("ContaActivity");
     }
 }

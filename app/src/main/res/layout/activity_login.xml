@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="kmk.gotraffic.controller.TelaLogin">
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,28 +18,28 @@
         android:orientation="vertical">
 
         <TextView
-            style="@style/TxtLoginEstilo"
+            style="@style/TxtEstilo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtEmail" />
 
         <EditText
-            android:id="@+id/edtEmail"
-            style="@style/EdtLoginEstilo"
+            android:id="@+id/login_edtEmail"
+            style="@style/EdtEstilo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress" />
 
         <TextView
-            style="@style/TxtLoginEstilo"
+            style="@style/TxtEstilo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtSenha" />
 
 
         <EditText
-            android:id="@+id/edtSenha"
-            style="@style/EdtLoginEstilo"
+            android:id="@+id/login_edtSenha"
+            style="@style/EdtEstilo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
@@ -56,15 +56,14 @@
             style="@style/ButtonEstilo"
             android:layout_marginBottom="@dimen/marginBottom"
             android:layout_weight="0"
-            android:background="@drawable/buttonblue"
+            android:background="@drawable/buttongreen"
             android:text="@string/btn_Entrar" />
 
         <Button
             android:id="@+id/login_btnCadastrar"
             style="@style/ButtonEstilo"
             android:layout_weight="0"
-            android:background="@drawable/buttongreen"
+            android:background="@drawable/buttonblue"
             android:text="@string/btn_Cadastrar" />
     </LinearLayout>
-
 </LinearLayout>

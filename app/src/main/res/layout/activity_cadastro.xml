@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_login"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".CadastroActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TxtEstilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtEmail" />
+
+        <EditText
+            android:id="@+id/cad_edtEmail"
+            style="@style/EdtEstilo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            style="@style/TxtEstilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtSenha" />
+
+
+        <EditText
+            android:id="@+id/cad_edtSenha"
+            style="@style/EdtEstilo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/cad_btnCadastrar"
+            style="@style/ButtonEstilo"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_weight="0"
+            android:background="@drawable/buttongreen"
+            android:text="@string/btn_Cadastrar" />
+
+        <Button
+            android:id="@+id/cad_btnVoltar"
+            style="@style/ButtonEstilo"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_weight="0"
+            android:background="@drawable/buttonred"
+            android:text="@string/btn_Voltar" />
+    </LinearLayout>
+
+</LinearLayout>

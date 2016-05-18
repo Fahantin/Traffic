@@ -8,7 +8,7 @@
 
     <dimen name="textPadrao">15sp</dimen>
     <dimen name="textButton">15sp</dimen>
-    <dimen name="textMin">10sp</dimen>
+    <dimen name="textMinimo">10sp</dimen>
     <dimen name="textLogin">20sp</dimen>
     <dimen name="textConta">28sp</dimen>
 </resources>

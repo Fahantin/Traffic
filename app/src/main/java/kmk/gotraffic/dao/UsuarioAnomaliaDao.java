@@ -25,7 +25,7 @@ public class UsuarioAnomaliaDao extends OpenSqliteHelper {
 
     private SQLiteDatabase db;
 
-    public UsuarioAnomaliaDao(Context context){
+    public UsuarioAnomaliaDao(Context context) {
         super(context);
         db = getWritableDatabase();
     }

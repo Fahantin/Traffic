@@ -2,6 +2,7 @@ package kmk.gotraffic.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -21,8 +22,11 @@ public class TipoAnomaliaDao extends OpenSqliteHelper {
                     + COLUMN_NAME_ICONE + " text NOT NULL)";
 
 
-    public TipoAnomaliaDao(Context context){
+    private SQLiteDatabase db;
+
+    public TipoAnomaliaDao(Context context) {
         super(context);
+        db = getWritableDatabase();
     }
 
     public static void insertDefaultTipoAnomalia(SQLiteDatabase db) {
@@ -40,5 +44,19 @@ public class TipoAnomaliaDao extends OpenSqliteHelper {
         contentValues.put(COLUMN_NAME_DESCRICAO, "Acidente");
         contentValues.put(COLUMN_NAME_ICONE, "./img/acidente.jpg");
         db.insert(TABLE_NAME, null, contentValues);
+    }
+
+    public String consulta() {
+
+        String query = "select * from tipo_anomalia";
+        Cursor c = db.rawQuery(query, null);
+        if (c.moveToFirst()) {
+            String a = c.getString(c.getColumnIndex("_id"));
+            String b = c.getString(c.getColumnIndex("descricao"));
+            String d = c.getString(c.getColumnIndex("icone"));
+
+            return "_id: " + a + " - descricao: " + b + " - icone: " + c;
+        }
+        return "Não Encontrou nada";
     }
 }

@@ -32,12 +32,12 @@ public class AnomaliaDao extends OpenSqliteHelper {
 
     private SQLiteDatabase db;
 
-    public AnomaliaDao(Context context){
+    public AnomaliaDao(Context context) {
         super(context);
         db = getWritableDatabase();
     }
 
-    public boolean insertAnomalia(Anomalia anomalia){
+    public boolean insertAnomalia(Anomalia anomalia) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_NAME_DTA_CRIACAO, anomalia.getDataCriacao());
         contentValues.put(COLUMN_NAME_LAT, anomalia.getLat());

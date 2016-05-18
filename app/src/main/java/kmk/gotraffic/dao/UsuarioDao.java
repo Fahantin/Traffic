@@ -2,6 +2,7 @@ package kmk.gotraffic.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import kmk.gotraffic.model.Usuario;
@@ -23,23 +24,53 @@ public class UsuarioDao extends OpenSqliteHelper {
                     + COLUMN_NAME_ID + " INTEGER PRIMARY KEY autoincrement NOT NULL, "
                     + COLUMN_NAME_EMAIL + " text NOT NULL, "
                     + COLUMN_NAME_SENHA + " text NOT NULL, "
-                    + COLUMN_NAME_EXP   + " integer NOT NULL DEFAULT(0), "
+                    + COLUMN_NAME_EXP + " integer NOT NULL DEFAULT(0), "
                     + COLUMN_NAME_LEVEL + " integer NOT NULL DEFAULT(1))";
 
     private SQLiteDatabase db;
 
-    public UsuarioDao(Context context){
+    public UsuarioDao(Context context) {
         super(context);
         db = getWritableDatabase();
     }
 
-    public boolean insertUsuario(Usuario usuario){
+    public static void insertDefaultUsuario(SQLiteDatabase db) {
+
+        Usuario user = new Usuario();
+        user.setEmail("master@traffic.com");
+        user.setSenha("123");
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_NAME_EMAIL, user.getEmail());
+        contentValues.put(COLUMN_NAME_SENHA, user.getSenha());
+        contentValues.put(COLUMN_NAME_EXP, user.getExp());
+        contentValues.put(COLUMN_NAME_LEVEL, user.getLevel());
+        db.insert(TABLE_NAME, null, contentValues);
+    }
+
+    public boolean insertUsuario(Usuario usuario) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_NAME_EMAIL, usuario.getEmail());
         contentValues.put(COLUMN_NAME_SENHA, usuario.getSenha());
         contentValues.put(COLUMN_NAME_EXP, usuario.getExp());
         contentValues.put(COLUMN_NAME_LEVEL, usuario.getLevel());
         return (db.insert(TABLE_NAME, null, contentValues) > 0);
+    }
+
+    public boolean validaLogin(String email, String senha) {
+
+        String query = "SELECT 1 FROM usuario WHERE email=? and senha=?";
+        Cursor c = db.rawQuery(query, new String[]{email.trim(), senha.trim()});
+        if (c.moveToFirst()) return true;
+        return false;
+    }
+
+    public boolean verificaEmail(String email) {
+
+        String query = "SELECT 1 FROM usuario WHERE email=?";
+        Cursor c = db.rawQuery(query, new String[]{email.trim()});
+        if (c.moveToFirst()) return false;
+        return true;
     }
 }
 

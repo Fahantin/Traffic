@@ -10,7 +10,7 @@ import kmk.gotraffic.controller.R;
 /**
  * Created by Thiago Fantin on 13/03/2016.
  */
-public class Util {
+public class AlertaUtil {
 //
 //    public static void showMsgToast(Activity activity, String txt) {
 //        LayoutInflater inflater = activity.getLayoutInflater();
@@ -25,14 +25,14 @@ public class Util {
 //    }
 
 
-    public static void showAlert(Activity act, String txtMessage, TipAlert tipAlert) {
+    public static void showAlert(Activity act, String txtMessage, TipoAlertaUtil tipoAlertaUtil) {
 
         AlertDialog alertDialog = null;
         int theme = 0, icone = 0;
         String msg = null;
         String titulo = null;
 
-        switch (tipAlert) {
+        switch (tipoAlertaUtil) {
             case HOLE:
                 theme = R.style.AppTheme_Dark_Dialog_Hole;
                 titulo = "Buraco";

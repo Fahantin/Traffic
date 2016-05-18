@@ -9,7 +9,7 @@ import android.view.View;
 import com.github.clans.fab.FloatingActionButton;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -20,15 +20,14 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.UUID;
 
-
-public class Principal extends FragmentActivity implements
+public class PrincipalActivity extends FragmentActivity implements
         OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener {
+        GoogleApiClient.OnConnectionFailedListener,
+        LocationListener{
 
-    public static final String TAG = Principal.class.getSimpleName();
+    public static final String TAG = PrincipalActivity.class.getSimpleName();
     SupportMapFragment mapFragment;
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
@@ -39,9 +38,8 @@ public class Principal extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.principal_Map);
         mapFragment.getMapAsync(this);
-
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -70,8 +68,17 @@ public class Principal extends FragmentActivity implements
     protected void onPause() {
         super.onPause();
         if (mGoogleApiClient.isConnected()) {
-            LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, (com.google.android.gms.location.LocationListener) this);
+            LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, (LocationListener) this);
             mGoogleApiClient.disconnect();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        boolean mRequestingLocationUpdates = false;
+        if (mGoogleApiClient.isConnected() && !mRequestingLocationUpdates) {
+            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, (LocationListener) this);
         }
     }
 
@@ -80,22 +87,36 @@ public class Principal extends FragmentActivity implements
         Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
 
         if (location == null) {
-            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, (com.google.android.gms.location.LocationListener) this);
+            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, (LocationListener) this);
         } else {
-            handleNewLocation(location);
+            markerMap(location);
         }
     }
 
-    public void handleNewLocation(Location location) {
+    @Override
+    public void onConnectionSuspended(int i) {
+        Log.i(TAG, "Location services suspended. Please reconnect.");
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    protected void markerMap(Location location) {
         Log.d(TAG, location.toString());
 
         double currentLatitude = location.getLatitude();
         double currentLongitude = location.getLongitude();
         final LatLng latLng = new LatLng(currentLatitude, currentLongitude);
 
-        final FloatingActionButton acidente = (FloatingActionButton) findViewById(R.id.fab1);
-        final FloatingActionButton congestionamento = (FloatingActionButton) findViewById(R.id.fab2);
-        final FloatingActionButton buraco = (FloatingActionButton) findViewById(R.id.fab3);
+        final FloatingActionButton acidente = (FloatingActionButton) findViewById(R.id.principal_btnAcidente);
+        final FloatingActionButton congestionamento = (FloatingActionButton) findViewById(R.id.principal_btnCongestionamento);
+        final FloatingActionButton buraco = (FloatingActionButton) findViewById(R.id.principal_btnBuraco);
 
         congestionamento.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,12 +153,4 @@ public class Principal extends FragmentActivity implements
         });
     }
 
-    @Override
-    public void onConnectionSuspended(int i) {
-        Log.i(TAG, "Location services suspended. Please reconnect.");
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-    }
 }

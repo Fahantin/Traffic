@@ -11,6 +11,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".CadastroActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginBottom="@dimen/marginBottom"
+        android:src="@drawable/logo"
+        android:layout_gravity="center" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

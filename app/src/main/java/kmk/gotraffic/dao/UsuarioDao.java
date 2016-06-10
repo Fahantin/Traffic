@@ -72,6 +72,21 @@ public class UsuarioDao extends OpenSqliteHelper {
         if (c.moveToFirst()) return false;
         return true;
     }
+
+    public Usuario getUser(String email) {
+        Usuario user = new Usuario();
+        String query = "SELECT * FROM usuario WHERE email=?";
+        Cursor c = db.rawQuery(query, new String[] {email.trim()});
+        if(c.moveToFirst()) {
+            user.setId(c.getInt(c.getColumnIndex("_id")));
+            user.setEmail(c.getString(c.getColumnIndex("email")));
+            user.setSenha(c.getString(c.getColumnIndex("senha")));
+            user.setExp(c.getInt(c.getColumnIndex("exp")));
+            user.setLevel(c.getInt(c.getColumnIndex("level")));
+            return user;
+        }
+        return null;
+    }
 }
 
 

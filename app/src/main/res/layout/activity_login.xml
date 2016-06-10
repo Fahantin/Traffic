@@ -11,10 +11,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginBottom="@dimen/marginBottom"
+        android:src="@drawable/logo"
+        android:layout_gravity="center" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
         android:orientation="vertical">
 
         <TextView
@@ -47,8 +55,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
         android:orientation="vertical">
 
         <Button
@@ -66,4 +74,5 @@
             android:background="@drawable/buttonblue"
             android:text="@string/btn_Cadastrar" />
     </LinearLayout>
+
 </LinearLayout>

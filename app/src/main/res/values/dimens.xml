@@ -4,11 +4,14 @@
     <dimen name="activity_vertical_margin">5dp</dimen>
 
     <dimen name="marginBottomComponents">40dp</dimen>
-    <dimen name="marginBottom">15dp</dimen>
+    <dimen name="marginBottom">20dp</dimen>
 
     <dimen name="textPadrao">15sp</dimen>
     <dimen name="textButton">15sp</dimen>
     <dimen name="textMinimo">10sp</dimen>
     <dimen name="textLogin">20sp</dimen>
     <dimen name="textConta">28sp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

@@ -1,30 +1,40 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:alertDialogTheme">@style/AppTheme.Dark.Dialog.Hole</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <!--<item name="android:alertDialogTheme">@style/AppTheme.Dark.Dialog.Hole</item>-->
+    <!--</style>-->
+
     <style name="AppTheme.Dark.Dialog.Hole" parent="Theme.AppCompat.Dialog">
-    <item name="colorAccent">@color/white</item>
-    <item name="android:textColorPrimary">@color/white</item>
-    <item name="android:background">@color/bg_hole</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:background">@color/bg_hole</item>
     </style>
 
     <style name="AppTheme.Dark.Dialog.Crash" parent="Theme.AppCompat.Dialog">
-    <item name="colorAccent">@color/white</item>
-    <item name="android:textColorPrimary">@color/white</item>
-    <item name="android:background">@color/bg_crash</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:background">@color/bg_crash</item>
     </style>
 
     <style name="AppTheme.Dark.Dialog.Traffic" parent="Theme.AppCompat.Dialog">
-    <item name="colorAccent">@color/white</item>
-    <item name="android:textColorPrimary">@color/white</item>
-    <item name="android:background">@color/bg_traffic</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:background">@color/bg_traffic</item>
     </style>
 
     <style name="ButtonGray">
@@ -74,4 +84,13 @@
         <item name="fab_colorPressed">#2269cd</item>
         <item name="fab_colorRipple">#62c3ff</item>
     </style>
+
+    <style name="NoActionBar" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

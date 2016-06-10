@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/conta_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -10,52 +11,53 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ContaActivity">
 
-    <LinearLayout
-        android:id="@+id/btn_Top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_weight="0.4">
-
-        <Button
-            android:id="@+id/principal_btnMapa"
-            style="@style/ButtonEstilo"
-            android:background="@drawable/buttonblue"
-            android:text="@string/btn_Mapa" />
-
-        <Button
-            android:id="@+id/principal_btnConta"
-            style="@style/ButtonEstilo"
-            android:background="@drawable/buttongreen"
-            android:clickable="false"
-            android:text="@string/btn_Conta" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5">
+        android:layout_marginBottom="@dimen/marginBottom">
 
         <TextView
-            android:textSize="@dimen/textConta"
+            android:id="@+id/conta_Email"
+            style="@style/TxtEstilo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thiago Fantin" />
+            android:text="Email"
+            android:textSize="@dimen/textConta" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="4">
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/conta_Level"
+            style="@style/TxtEstilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/conta_Exp"
+            style="@style/TxtEstilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exp" />
 
         <TextView
             style="@style/TxtEstilo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NOME" />
-
+            android:text="/100" />
     </LinearLayout>
 
 </LinearLayout>

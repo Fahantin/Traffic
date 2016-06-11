@@ -22,7 +22,6 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-        getSupportActionBar().hide();
 
         btnCadastrar = (Button) findViewById(R.id.cad_btnCadastrar);
         btnVoltar = (Button) findViewById(R.id.cad_btnVoltar);

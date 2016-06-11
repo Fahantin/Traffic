@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import kmk.gotraffic.controller.validation.LoginValidation;
 import kmk.gotraffic.dao.UsuarioDao;
+import kmk.gotraffic.model.Usuario;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -22,12 +23,12 @@ public class LoginActivity extends AppCompatActivity {
     private Toast toast;
     private LoginValidation loginValidation;
     private SharedPreferences preferences;
+    public static Usuario user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
 
         preferences = getSharedPreferences("login", Context.MODE_PRIVATE);
         edtEmail = (EditText) findViewById(R.id.login_edtEmail);
@@ -58,8 +59,9 @@ public class LoginActivity extends AppCompatActivity {
         toast.show();
 
         if (dao.validaLogin(email, senha)) {
-            email = preferences.getString("email", null);
-            senha = preferences.getString("senha", null);
+
+            user = new Usuario();
+            user = dao.getUser(email);
 
             Intent intent = new Intent(LoginActivity.this, PrincipalActivity.class);
             startActivity(intent);

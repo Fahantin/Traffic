@@ -1,5 +1,6 @@
 package kmk.gotraffic.controller;
 
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -19,6 +20,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.security.Principal;
 
 
 public class PrincipalActivity extends FragmentActivity implements
@@ -117,6 +120,7 @@ public class PrincipalActivity extends FragmentActivity implements
         final FloatingActionButton acidente = (FloatingActionButton) findViewById(R.id.principal_btnAcidente);
         final FloatingActionButton congestionamento = (FloatingActionButton) findViewById(R.id.principal_btnCongestionamento);
         final FloatingActionButton buraco = (FloatingActionButton) findViewById(R.id.principal_btnBuraco);
+        final FloatingActionButton conta = (FloatingActionButton) findViewById(R.id.principal_btnConta);
 
         congestionamento.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,6 +153,15 @@ public class PrincipalActivity extends FragmentActivity implements
                         .title("Buraco")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.hole_map)));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
+            }
+        });
+
+        conta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PrincipalActivity.this, ContaActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
